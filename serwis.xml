@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<Serwis>
+    <Pracownicy>
+        <Pracownik ID="1">
+            <Osoba>
+                <Imie>Wojciech</Imie>
+                <Nazwisko>Dyrektorski</Nazwisko>
+                <Pesel>71462984234</Pesel>
+                <Nr_telefonu>234675847</Nr_telefonu>
+                <Adres_email>PanSzefu@gmail.com</Adres_email>
+            </Osoba>
+            <Adres>
+                <Miasto>Gdańsk</Miasto>
+                <Ulica>Kwiatowa</Ulica>
+                <Nr_domu>15</Nr_domu>
+                <Nr_mieszkania>5</Nr_mieszkania>
+            </Adres>
+        </Pracownik>
+        <Pracownik ID="2">
+            <Osoba>
+                <Imie>Karol</Imie>
+                <Nazwisko>Mustang</Nazwisko>
+                <Pesel>64578356472</Pesel>
+                <Nr_telefonu>647590123</Nr_telefonu>
+                <Adres_email>SzybkiMustang@wp.pl</Adres_email>
+            </Osoba>
+            <Adres>
+                <Miasto>Gdańsk</Miasto>
+                <Ulica>Lipowa</Ulica>
+                <Nr_domu>50</Nr_domu>
+                <Nr_mieszkania>3</Nr_mieszkania>
+            </Adres>
+        </Pracownik>
+        <Pracownik ID="3">
+            <Osoba>
+                <Imie>Paweł</Imie>
+                <Nazwisko>Dzonkowski</Nazwisko>
+                <Pesel>76859401286</Pesel>
+                <Nr_telefonu>657293857</Nr_telefonu>
+                <Adres_email>Dzwonek54@wp.pl</Adres_email>
+            </Osoba>
+            <Adres>
+                <Miasto>Gdańsk</Miasto>
+                <Ulica>Tęczowa</Ulica>
+                <Nr_domu>13</Nr_domu>
+                <Nr_mieszkania>3</Nr_mieszkania>
+            </Adres>
+        </Pracownik>
+    </Pracownicy>
+    <Klienci>
+        <Klient ID="1">
+            <Osoba>
+                <Imie>Piotr</Imie>
+                <Nazwisko>Kawowy</Nazwisko>
+                <Nr_telefonu>321412412</Nr_telefonu>
+                <Adres_email>PKawowy@gmail.com</Adres_email>
+            </Osoba>
+            <Adres>
+                <Miasto>Gdynia</Miasto>
+                <Ulica>Robocza</Ulica>
+                <Nr_domu>20</Nr_domu>
+                <Nr_mieszkania>1</Nr_mieszkania>
+            </Adres>
+        </Klient>
+        <Klient ID="2">
+            <Osoba>
+                <Imie>Adam</Imie>
+                <Nazwisko>Mickiewicz</Nazwisko>
+                <Nr_telefonu>934678243</Nr_telefonu>
+                <Adres_email>PanTadeusz@wp.pl</Adres_email>
+            </Osoba>
+            <Adres>
+                <Miasto>Sopot</Miasto>
+                <Ulica>Gospody</Ulica>
+                <Nr_domu>5</Nr_domu>
+                <Nr_mieszkania>23</Nr_mieszkania>
+            </Adres>
+        </Klient>
+        <Klient ID="3">
+            <Osoba>
+                <Imie>Paulina</Imie>
+                <Nazwisko>Kolorowa</Nazwisko>
+                <Nr_telefonu>746296834</Nr_telefonu>
+                <Adres_email>PKolor@wp.pl</Adres_email>
+            </Osoba>
+            <Adres>
+                <Miasto>Gdynia</Miasto>
+                <Ulica>Betonowa</Ulica>
+                <Nr_domu>30</Nr_domu>
+                <Nr_mieszkania>1</Nr_mieszkania>
+            </Adres>
+        </Klient>
+        <Klient ID="4">
+            <Osoba>
+                <Imie>Szymon</Imie>
+                <Nazwisko>Bartkowski</Nazwisko>
+                <Nr_telefonu>573924575</Nr_telefonu>
+                <Adres_email>BartekSzymonowski@gmail.com</Adres_email>
+            </Osoba>
+            <Adres>
+                <Miasto>Gdynia</Miasto>
+                <Ulica>Łabędzia</Ulica>
+                <Nr_domu>5</Nr_domu>
+                <Nr_mieszkania>8</Nr_mieszkania>
+            </Adres>
+        </Klient>
+    </Klienci>
+    <Naprawy>
+        <Naprawa ID="1" pracID="1" klientID="1">
+            <Sprzet>
+                <Rodzaj>Komputer</Rodzaj>
+                <Opis>Sprzęt się nie włącza</Opis>
+                <Usterka>USzkodzony zasilacz</Usterka>
+            </Sprzet>
+            <Data_rozpoczecia>2020-05-13</Data_rozpoczecia>
+            <Czynnosc>Wymiana zasilacza</Czynnosc>
+            <Czynnosc>Przeczyszczenie wnętrza z kurzu</Czynnosc>
+        </Naprawa>
+        <Naprawa ID="2" pracID="2" klientID="2">
+            <Sprzet>
+                <Rodzaj>Laptop</Rodzaj>
+                <Opis>Sprzęt bardzo wolno chodzi, co chwila wyskakują reklamy</Opis>
+                <Usterka>Zawirusowany komputer</Usterka>
+            </Sprzet>
+            <Data_rozpoczecia>2020-04-30</Data_rozpoczecia>
+            <Czynnosc>Format dysku</Czynnosc>
+            <Czynnosc>Przeczyszczenie wnętrza z kurzu</Czynnosc>
+            <Data_zakonczenia>2020-05-03</Data_zakonczenia>
+        </Naprawa>
+        <Naprawa ID="3" pracID="2" klientID="3">
+            <Sprzet>
+                <Rodzaj>Telefon</Rodzaj>
+                <Opis>Potrzebna jest wymiana ekranu</Opis>
+                <Usterka>Pęknięty ekran</Usterka>
+            </Sprzet>
+            <Data_rozpoczecia>2020-05-01</Data_rozpoczecia>
+            <Czynnosc>Wymiana ekranu</Czynnosc>
+            <Data_zakonczenia>2020-05-08</Data_zakonczenia>
+        </Naprawa>
+        <Naprawa ID="4" pracID="3" klientID="4">
+            <Sprzet>
+                <Rodzaj>Tablet</Rodzaj>
+                <Opis>Sprzęt się nie ładuje</Opis>
+                <Usterka>Uszkodzony port ładowarki</Usterka>
+            </Sprzet>
+            <Data_rozpoczecia>2020-04-15</Data_rozpoczecia>
+            <Czynnosc>Wymiana portu ładowarki</Czynnosc>
+            <Data_zakonczenia>2020-05-02</Data_zakonczenia>
+        </Naprawa>
+    </Naprawy>
+</Serwis>
