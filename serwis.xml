@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
+<?xml-stylesheet type="text/css" href="serwis.css" ?>
 <Serwis>
     <Pracownicy>
         <Pracownik ID="1">
-            <Osoba>
+            <Osoba plec="M">
                 <Imie>Wojciech</Imie>
                 <Nazwisko>Dyrektorski</Nazwisko>
                 <Pesel>71462984234</Pesel>
@@ -17,8 +18,8 @@
             </Adres>
         </Pracownik>
         <Pracownik ID="2">
-            <Osoba>
-                <Imie>Karol</Imie>
+            <Osoba plec="K">
+                <Imie>Klaudia</Imie>
                 <Nazwisko>Mustang</Nazwisko>
                 <Pesel>64578356472</Pesel>
                 <Nr_telefonu>647590123</Nr_telefonu>
@@ -32,7 +33,7 @@
             </Adres>
         </Pracownik>
         <Pracownik ID="3">
-            <Osoba>
+            <Osoba plec="M">
                 <Imie>Paweł</Imie>
                 <Nazwisko>Dzonkowski</Nazwisko>
                 <Pesel>76859401286</Pesel>
@@ -49,7 +50,7 @@
     </Pracownicy>
     <Klienci>
         <Klient ID="1">
-            <Osoba>
+            <Osoba plec="M">
                 <Imie>Piotr</Imie>
                 <Nazwisko>Kawowy</Nazwisko>
                 <Nr_telefonu>321412412</Nr_telefonu>
@@ -63,7 +64,7 @@
             </Adres>
         </Klient>
         <Klient ID="2">
-            <Osoba>
+            <Osoba plec="M">
                 <Imie>Adam</Imie>
                 <Nazwisko>Mickiewicz</Nazwisko>
                 <Nr_telefonu>934678243</Nr_telefonu>
@@ -77,7 +78,7 @@
             </Adres>
         </Klient>
         <Klient ID="3">
-            <Osoba>
+            <Osoba plec="K">
                 <Imie>Paulina</Imie>
                 <Nazwisko>Kolorowa</Nazwisko>
                 <Nr_telefonu>746296834</Nr_telefonu>
@@ -91,11 +92,11 @@
             </Adres>
         </Klient>
         <Klient ID="4">
-            <Osoba>
-                <Imie>Szymon</Imie>
-                <Nazwisko>Bartkowski</Nazwisko>
+            <Osoba plec="K">
+                <Imie>Karolina</Imie>
+                <Nazwisko>Bartkowska</Nazwisko>
                 <Nr_telefonu>573924575</Nr_telefonu>
-                <Adres_email>BartekSzymonowski@gmail.com</Adres_email>
+                <Adres_email>BartekKaroliński@gmail.com</Adres_email>
             </Osoba>
             <Adres>
                 <Miasto>Gdynia</Miasto>
@@ -107,17 +108,17 @@
     </Klienci>
     <Naprawy>
         <Naprawa ID="1" pracID="1" klientID="1">
-            <Sprzet>
+            <Sprzet rodzaj="PC">
                 <Rodzaj>Komputer</Rodzaj>
                 <Opis>Sprzęt się nie włącza</Opis>
-                <Usterka>USzkodzony zasilacz</Usterka>
+                <Usterka>Uszkodzony zasilacz</Usterka>
             </Sprzet>
             <Data_rozpoczecia>2020-05-13</Data_rozpoczecia>
             <Czynnosc>Wymiana zasilacza</Czynnosc>
             <Czynnosc>Przeczyszczenie wnętrza z kurzu</Czynnosc>
         </Naprawa>
         <Naprawa ID="2" pracID="2" klientID="2">
-            <Sprzet>
+            <Sprzet rodzaj="Lap">
                 <Rodzaj>Laptop</Rodzaj>
                 <Opis>Sprzęt bardzo wolno chodzi, co chwila wyskakują reklamy</Opis>
                 <Usterka>Zawirusowany komputer</Usterka>
@@ -128,7 +129,7 @@
             <Data_zakonczenia>2020-05-03</Data_zakonczenia>
         </Naprawa>
         <Naprawa ID="3" pracID="2" klientID="3">
-            <Sprzet>
+            <Sprzet rodzaj="Tel">
                 <Rodzaj>Telefon</Rodzaj>
                 <Opis>Potrzebna jest wymiana ekranu</Opis>
                 <Usterka>Pęknięty ekran</Usterka>
@@ -138,7 +139,7 @@
             <Data_zakonczenia>2020-05-08</Data_zakonczenia>
         </Naprawa>
         <Naprawa ID="4" pracID="3" klientID="4">
-            <Sprzet>
+            <Sprzet rodzaj="Tab">
                 <Rodzaj>Tablet</Rodzaj>
                 <Opis>Sprzęt się nie ładuje</Opis>
                 <Usterka>Uszkodzony port ładowarki</Usterka>

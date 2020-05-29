@@ -1,0 +1,171 @@
+Serwis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+Pracownicy{
+    display: inline-block;
+    border-style: solid;
+    border-color: #FFCC33;
+    background-color: #444444;
+    margin-left: 20px;
+}
+Pracownicy:before{
+    content: "Pracownicy:";
+    color: #FFCC33;
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-left: 5px;
+}
+Pracownik{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #FFCC33;
+    border-style: solid;
+    border-color: #FFCC33;
+}
+Pracownik > Osoba[plec='K']{
+    background-color: #CC33FF;
+}
+Pracownik > Osoba[plec='M']{
+    background-color: #0099FF;
+}
+
+Klienci{
+    display: inline-block;
+    border-style: solid;
+    border-color: #CCFF66;
+    background-color: #444444;
+    margin-left: 20px;
+}
+Klienci:before{
+    content: "Klienci:";
+    color: #CCFF66;
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-left: 5px;
+}
+Klient{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #CCFF66;
+    border-style: solid;
+    border-color: #CCFF66;
+}
+Klient > Osoba[plec='K']{
+    background-color: #FFCCFF;
+}
+Klient > Osoba[plec='M']{
+    background-color: #99CCFF;
+}
+
+Naprawy{
+    display: inline-block;
+    border-style: solid;
+    border-color: #FF3333;
+    background-color: #444444;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+Naprawy:before{
+    content: "Naprawy:";
+    color: #FF3333;
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-left: 5px;
+}
+Naprawa{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-image: linear-gradient(#0099FF, #FF3333);
+    border-style: solid;
+    border-color: #FF3333;
+    counter-reset: czyn;
+}
+
+Sprzet{
+    display: block;
+}
+Rodzaj{
+    font-weight: bold;
+}
+Opis{
+    display: block;
+    width: 200px;
+    height: 35px;
+    overflow: auto;
+}
+Czynnosc{
+    display: block;
+}
+Czynnosc:before{
+    counter-increment: czyn;
+    content: counter(czyn) ". ";
+}
+Sprzet[rodzaj='PC'] > Rodzaj:after{
+    content:url('komputer.png');
+    margin-left: 5px;
+}
+Sprzet[rodzaj='Lap'] > Rodzaj:after{
+    content:url('laptop.png');
+    margin-left: 5px;
+}
+Sprzet[rodzaj='Tel'] > Rodzaj:after{
+    content:url('telefon.png');
+    margin-left: 5px;
+}
+Sprzet[rodzaj='Tab'] > Rodzaj:after{
+    content:url('tablet.png');
+    margin-left: 5px;
+}
+
+
+Osoba{
+    display: block;
+    opacity: 0.6;
+}
+Osoba:hover{
+    opacity: 1;
+}
+Nr_telefonu:before{
+    content: "nr telefonu: ";
+    font-size: small;
+}
+Nr_telefonu{
+    display: block;
+    font-size: small;
+}
+Adres_email{
+    font-size: small;
+}
+Adres_email:before{
+    content: "Email: ";
+    font-size: small;
+}
+Adres{
+    font-size: small;
+}
+Nr_domu:after{
+    content: " przez";
+}
+Pesel{
+    display: block;
+    font-size: small;
+}
+Pesel:before{
+    content: "Pesel: ";
+    font-size: small;
+}
