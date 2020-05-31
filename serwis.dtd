@@ -1,0 +1,36 @@
+<!ELEMENT Serwis (Pracownicy, Klienci, Naprawy)>
+<!ELEMENT Pracownicy (Pracownik+)>
+<!ENTITY % Osob "(Osoba, Adres)">
+<!ENTITY % pc "(#PCDATA)">
+<!ELEMENT Pracownik %Osob;>
+<!ELEMENT Osoba (Imie, Nazwisko, Pesel?, Nr_telefonu, Adres_email)>
+<!ELEMENT Imie %pc;>
+<!ELEMENT Nazwisko %pc;>
+<!ELEMENT Pesel %pc;>
+<!ELEMENT Nr_telefonu %pc;>
+<!ELEMENT Adres_email %pc;>
+<!ELEMENT Adres (Miasto, Ulica, Nr_domu, Nr_mieszkania)>
+<!ELEMENT Miasto %pc;>
+<!ELEMENT Ulica %pc;>
+<!ELEMENT Nr_domu %pc;>
+<!ELEMENT Nr_mieszkania %pc;>
+<!ELEMENT Klienci (Klient*)>
+<!ELEMENT Klient %Osob;>
+<!ELEMENT Naprawy (Naprawa*)>
+<!ELEMENT Naprawa (Sprzet, Data_rozpoczecia, Czynnosc*, (Data_zakonczenia, Zakonczone)?)>
+<!ELEMENT Sprzet (Rodzaj, (Opis|Usterka))>
+<!ELEMENT Rodzaj %pc;>
+<!ELEMENT Data_rozpoczecia %pc;>
+<!ELEMENT Czynnosc %pc;>
+<!ELEMENT Data_zakonczenia %pc;>
+<!ELEMENT Zakonczone EMPTY>
+<!ELEMENT Opis %pc;>
+<!ELEMENT Usterka %pc;>
+<!ATTLIST Adres kraj NMTOKEN #FIXED "Polska">
+<!ATTLIST Pracownik ID ID #REQUIRED>
+<!ATTLIST Klient ID ID #REQUIRED>
+<!ATTLIST Osoba plec (M|K) #IMPLIED>
+<!ATTLIST Naprawa ID ID #REQUIRED>
+<!ATTLIST Naprawa pracID IDREF #REQUIRED>
+<!ATTLIST Naprawa klientID IDREF #REQUIRED>
+<!ATTLIST Sprzet rodzaj NMTOKEN "Inne">

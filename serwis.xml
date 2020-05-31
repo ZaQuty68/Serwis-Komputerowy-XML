@@ -1,23 +1,24 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <?xml-stylesheet type="text/css" href="serwis.css" ?>
+<!DOCTYPE Serwis SYSTEM "serwis.dtd">
 <Serwis>
     <Pracownicy>
-        <Pracownik ID="1">
-            <Osoba plec="M">
+        <Pracownik ID="P1">
+            <Osoba>
                 <Imie>Wojciech</Imie>
                 <Nazwisko>Dyrektorski</Nazwisko>
                 <Pesel>71462984234</Pesel>
                 <Nr_telefonu>234675847</Nr_telefonu>
                 <Adres_email>PanSzefu@gmail.com</Adres_email>
             </Osoba>
-            <Adres>
+            <Adres kraj="Polska">
                 <Miasto>Gdańsk</Miasto>
                 <Ulica>Kwiatowa</Ulica>
                 <Nr_domu>15</Nr_domu>
                 <Nr_mieszkania>5</Nr_mieszkania>
             </Adres>
         </Pracownik>
-        <Pracownik ID="2">
+        <Pracownik ID="P2">
             <Osoba plec="K">
                 <Imie>Klaudia</Imie>
                 <Nazwisko>Mustang</Nazwisko>
@@ -25,14 +26,14 @@
                 <Nr_telefonu>647590123</Nr_telefonu>
                 <Adres_email>SzybkiMustang@wp.pl</Adres_email>
             </Osoba>
-            <Adres>
+            <Adres kraj="Polska">
                 <Miasto>Gdańsk</Miasto>
                 <Ulica>Lipowa</Ulica>
                 <Nr_domu>50</Nr_domu>
                 <Nr_mieszkania>3</Nr_mieszkania>
             </Adres>
         </Pracownik>
-        <Pracownik ID="3">
+        <Pracownik ID="P3">
             <Osoba plec="M">
                 <Imie>Paweł</Imie>
                 <Nazwisko>Dzonkowski</Nazwisko>
@@ -40,7 +41,7 @@
                 <Nr_telefonu>657293857</Nr_telefonu>
                 <Adres_email>Dzwonek54@wp.pl</Adres_email>
             </Osoba>
-            <Adres>
+            <Adres kraj="Polska">
                 <Miasto>Gdańsk</Miasto>
                 <Ulica>Tęczowa</Ulica>
                 <Nr_domu>13</Nr_domu>
@@ -49,56 +50,56 @@
         </Pracownik>
     </Pracownicy>
     <Klienci>
-        <Klient ID="1">
+        <Klient ID="K1">
             <Osoba plec="M">
                 <Imie>Piotr</Imie>
                 <Nazwisko>Kawowy</Nazwisko>
                 <Nr_telefonu>321412412</Nr_telefonu>
                 <Adres_email>PKawowy@gmail.com</Adres_email>
             </Osoba>
-            <Adres>
+            <Adres kraj="Polska">
                 <Miasto>Gdynia</Miasto>
                 <Ulica>Robocza</Ulica>
                 <Nr_domu>20</Nr_domu>
-                <Nr_mieszkania>1</Nr_mieszkania>
+                <Nr_mieszkania></Nr_mieszkania>
             </Adres>
         </Klient>
-        <Klient ID="2">
+        <Klient ID="K2">
             <Osoba plec="M">
                 <Imie>Adam</Imie>
                 <Nazwisko>Mickiewicz</Nazwisko>
                 <Nr_telefonu>934678243</Nr_telefonu>
                 <Adres_email>PanTadeusz@wp.pl</Adres_email>
             </Osoba>
-            <Adres>
+            <Adres kraj="Polska">
                 <Miasto>Sopot</Miasto>
                 <Ulica>Gospody</Ulica>
                 <Nr_domu>5</Nr_domu>
                 <Nr_mieszkania>23</Nr_mieszkania>
             </Adres>
         </Klient>
-        <Klient ID="3">
+        <Klient ID="K3">
             <Osoba plec="K">
                 <Imie>Paulina</Imie>
                 <Nazwisko>Kolorowa</Nazwisko>
                 <Nr_telefonu>746296834</Nr_telefonu>
                 <Adres_email>PKolor@wp.pl</Adres_email>
             </Osoba>
-            <Adres>
+            <Adres kraj="Polska">
                 <Miasto>Gdynia</Miasto>
                 <Ulica>Betonowa</Ulica>
                 <Nr_domu>30</Nr_domu>
                 <Nr_mieszkania>1</Nr_mieszkania>
             </Adres>
         </Klient>
-        <Klient ID="4">
+        <Klient ID="K4">
             <Osoba plec="K">
                 <Imie>Karolina</Imie>
                 <Nazwisko>Bartkowska</Nazwisko>
                 <Nr_telefonu>573924575</Nr_telefonu>
                 <Adres_email>BartekKaroliński@gmail.com</Adres_email>
             </Osoba>
-            <Adres>
+            <Adres kraj="Polska">
                 <Miasto>Gdynia</Miasto>
                 <Ulica>Łabędzia</Ulica>
                 <Nr_domu>5</Nr_domu>
@@ -107,46 +108,45 @@
         </Klient>
     </Klienci>
     <Naprawy>
-        <Naprawa ID="1" pracID="1" klientID="1">
+        <Naprawa ID="N1" pracID="P1" klientID="K1">
             <Sprzet rodzaj="PC">
                 <Rodzaj>Komputer</Rodzaj>
                 <Opis>Sprzęt się nie włącza</Opis>
-                <Usterka>Uszkodzony zasilacz</Usterka>
             </Sprzet>
             <Data_rozpoczecia>2020-05-13</Data_rozpoczecia>
             <Czynnosc>Wymiana zasilacza</Czynnosc>
             <Czynnosc>Przeczyszczenie wnętrza z kurzu</Czynnosc>
         </Naprawa>
-        <Naprawa ID="2" pracID="2" klientID="2">
+        <Naprawa ID="N2" pracID="P2" klientID="K2">
             <Sprzet rodzaj="Lap">
                 <Rodzaj>Laptop</Rodzaj>
-                <Opis>Sprzęt bardzo wolno chodzi, co chwila wyskakują reklamy</Opis>
-                <Usterka>Zawirusowany komputer</Usterka>
+                <Opis>Sprzęt bardzo wolno chodzi. Często wyskakują reklamy nawet na pulpicie</Opis>
             </Sprzet>
             <Data_rozpoczecia>2020-04-30</Data_rozpoczecia>
             <Czynnosc>Format dysku</Czynnosc>
             <Czynnosc>Przeczyszczenie wnętrza z kurzu</Czynnosc>
             <Data_zakonczenia>2020-05-03</Data_zakonczenia>
+            <Zakonczone/>
         </Naprawa>
-        <Naprawa ID="3" pracID="2" klientID="3">
+        <Naprawa ID="N3" pracID="P2" klientID="K3">
             <Sprzet rodzaj="Tel">
                 <Rodzaj>Telefon</Rodzaj>
-                <Opis>Potrzebna jest wymiana ekranu</Opis>
                 <Usterka>Pęknięty ekran</Usterka>
             </Sprzet>
             <Data_rozpoczecia>2020-05-01</Data_rozpoczecia>
             <Czynnosc>Wymiana ekranu</Czynnosc>
             <Data_zakonczenia>2020-05-08</Data_zakonczenia>
+            <Zakonczone/>
         </Naprawa>
-        <Naprawa ID="4" pracID="3" klientID="4">
+        <Naprawa ID="N4" pracID="P3" klientID="K4">
             <Sprzet rodzaj="Tab">
                 <Rodzaj>Tablet</Rodzaj>
-                <Opis>Sprzęt się nie ładuje</Opis>
                 <Usterka>Uszkodzony port ładowarki</Usterka>
             </Sprzet>
             <Data_rozpoczecia>2020-04-15</Data_rozpoczecia>
             <Czynnosc>Wymiana portu ładowarki</Czynnosc>
             <Data_zakonczenia>2020-05-02</Data_zakonczenia>
+            <Zakonczone/>
         </Naprawa>
     </Naprawy>
 </Serwis>

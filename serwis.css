@@ -108,6 +108,9 @@ Opis{
     height: 35px;
     overflow: auto;
 }
+Usterka{
+    display: block;
+}
 Czynnosc{
     display: block;
 }
