@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <?xml-stylesheet type="text/css" href="serwis.css" ?>
 <!DOCTYPE Serwis SYSTEM "serwis.dtd">
-<Serwis>
+<Serwis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="serwis.xsd">
     <Pracownicy>
         <Pracownik ID="P1">
             <Osoba>
@@ -12,7 +12,7 @@
                 <Adres_email>PanSzefu@gmail.com</Adres_email>
             </Osoba>
             <Adres kraj="Polska">
-                <Miasto>Gdańsk</Miasto>
+                <Miasto>Gdansk</Miasto>
                 <Ulica>Kwiatowa</Ulica>
                 <Nr_domu>15</Nr_domu>
                 <Nr_mieszkania>5</Nr_mieszkania>
@@ -27,7 +27,7 @@
                 <Adres_email>SzybkiMustang@wp.pl</Adres_email>
             </Osoba>
             <Adres kraj="Polska">
-                <Miasto>Gdańsk</Miasto>
+                <Miasto>Gdansk</Miasto>
                 <Ulica>Lipowa</Ulica>
                 <Nr_domu>50</Nr_domu>
                 <Nr_mieszkania>3</Nr_mieszkania>
@@ -35,15 +35,15 @@
         </Pracownik>
         <Pracownik ID="P3">
             <Osoba plec="M">
-                <Imie>Paweł</Imie>
+                <Imie>Pawel</Imie>
                 <Nazwisko>Dzonkowski</Nazwisko>
                 <Pesel>76859401286</Pesel>
                 <Nr_telefonu>657293857</Nr_telefonu>
                 <Adres_email>Dzwonek54@wp.pl</Adres_email>
             </Osoba>
             <Adres kraj="Polska">
-                <Miasto>Gdańsk</Miasto>
-                <Ulica>Tęczowa</Ulica>
+                <Miasto>Gdansk</Miasto>
+                <Ulica>Teczowa</Ulica>
                 <Nr_domu>13</Nr_domu>
                 <Nr_mieszkania>3</Nr_mieszkania>
             </Adres>
@@ -101,7 +101,7 @@
             </Osoba>
             <Adres kraj="Polska">
                 <Miasto>Gdynia</Miasto>
-                <Ulica>Łabędzia</Ulica>
+                <Ulica>Labedzia</Ulica>
                 <Nr_domu>5</Nr_domu>
                 <Nr_mieszkania>8</Nr_mieszkania>
             </Adres>
@@ -111,27 +111,27 @@
         <Naprawa ID="N1" pracID="P1" klientID="K1">
             <Sprzet rodzaj="PC">
                 <Rodzaj>Komputer</Rodzaj>
-                <Opis>Sprzęt się nie włącza</Opis>
+                <Opis>Sprzet się nie wlacza</Opis>
             </Sprzet>
             <Data_rozpoczecia>2020-05-13</Data_rozpoczecia>
             <Czynnosc>Wymiana zasilacza</Czynnosc>
-            <Czynnosc>Przeczyszczenie wnętrza z kurzu</Czynnosc>
+            <Czynnosc>Przeczyszczenie wnetrza z kurzu</Czynnosc>
         </Naprawa>
         <Naprawa ID="N2" pracID="P2" klientID="K2">
             <Sprzet rodzaj="Lap">
                 <Rodzaj>Laptop</Rodzaj>
-                <Opis>Sprzęt bardzo wolno chodzi. Często wyskakują reklamy nawet na pulpicie</Opis>
+                <Opis>Sprzet bardzo wolno chodzi. Czesto wyskakuja reklamy nawet na pulpicie</Opis>
             </Sprzet>
             <Data_rozpoczecia>2020-04-30</Data_rozpoczecia>
             <Czynnosc>Format dysku</Czynnosc>
-            <Czynnosc>Przeczyszczenie wnętrza z kurzu</Czynnosc>
+            <Czynnosc>Przeczyszczenie wnetrza z kurzu</Czynnosc>
             <Data_zakonczenia>2020-05-03</Data_zakonczenia>
             <Zakonczone/>
         </Naprawa>
         <Naprawa ID="N3" pracID="P2" klientID="K3">
             <Sprzet rodzaj="Tel">
                 <Rodzaj>Telefon</Rodzaj>
-                <Usterka>Pęknięty ekran</Usterka>
+                <Usterka>Pekniety ekran</Usterka>
             </Sprzet>
             <Data_rozpoczecia>2020-05-01</Data_rozpoczecia>
             <Czynnosc>Wymiana ekranu</Czynnosc>
@@ -141,10 +141,10 @@
         <Naprawa ID="N4" pracID="P3" klientID="K4">
             <Sprzet rodzaj="Tab">
                 <Rodzaj>Tablet</Rodzaj>
-                <Usterka>Uszkodzony port ładowarki</Usterka>
+                <Usterka>Uszkodzony port ladowarki</Usterka>
             </Sprzet>
             <Data_rozpoczecia>2020-04-15</Data_rozpoczecia>
-            <Czynnosc>Wymiana portu ładowarki</Czynnosc>
+            <Czynnosc>Wymiana portu ladowarki</Czynnosc>
             <Data_zakonczenia>2020-05-02</Data_zakonczenia>
             <Zakonczone/>
         </Naprawa>
