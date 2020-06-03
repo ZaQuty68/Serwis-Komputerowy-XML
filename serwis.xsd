@@ -1,0 +1,254 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:group name="Adres">
+        <xsd:sequence>
+            <xsd:element name="Miasto">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="3"/>
+                        <xsd:pattern value="([A-Z][a-z]+)+"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Ulica">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="3"/>
+                        <xsd:pattern value="([A-Z][a-z]+)+"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Nr_domu" type="xsd:positiveInteger"/>
+            <xsd:element name="Nr_mieszkania">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="[0-9]*"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:group name="Osoba">
+        <xsd:sequence>
+            <xsd:element name="Imie">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:token">
+                        <xsd:minLength value="3"/>
+                        <xsd:maxLength value="45"/>
+                        <xsd:pattern value="[A-Z][a-z]+"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Nazwisko">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:token">
+                        <xsd:minLength value="3"/>
+                        <xsd:maxLength value="45"/>
+                        <xsd:pattern value="[A-Z][a-z]+"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Pesel" minOccurs="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:integer">
+                        <xsd:totalDigits value="11"/>
+                        <xsd:pattern value="[0-9]*"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Nr_telefonu">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:integer">
+                        <xsd:pattern value="[0-9]{9}"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Adres_email">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="\w+[@]\w+[.][a-z]+"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:attributeGroup name="plec">
+        <xsd:attribute name="plec">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="M"/>
+                    <xsd:enumeration value="K"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+    </xsd:attributeGroup>
+    <xsd:element name="Serwis">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Pracownicy">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Pracownik"  maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Osoba">
+                                            <xsd:complexType>
+                                                <xsd:group ref="Osoba"/>
+                                                <xsd:attributeGroup ref="plec"/>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="Adres">
+                                            <xsd:complexType>
+                                                <xsd:group ref="Adres"/>
+                                                <xsd:attribute name="kraj" type="xsd:string" fixed="Polska" use="required"/>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="ID" use="required">
+                                        <xsd:simpleType>
+                                            <xsd:restriction base="xsd:string">
+                                                <xsd:pattern value="P[0-9]+"/>
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
+                                    </xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Klienci">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Klient"  maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Osoba">
+                                            <xsd:complexType>
+                                                <xsd:group ref="Osoba"/>
+                                                <xsd:attributeGroup ref="plec"/>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="Adres">
+                                            <xsd:complexType>
+                                                <xsd:group ref="Adres"/>
+                                                <xsd:attribute name="kraj" type="xsd:string" fixed="Polska" use="required"/>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="ID" use="required">
+                                        <xsd:simpleType>
+                                            <xsd:restriction base="xsd:string">
+                                                <xsd:pattern value="K[0-9]+"/>
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
+                                    </xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Naprawy">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Naprawa" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Sprzet">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="Rodzaj">
+                                                        <xsd:simpleType>
+                                                            <xsd:restriction base="xsd:string">
+                                                                <xsd:enumeration value="Komputer"/>
+                                                                <xsd:enumeration value="Laptop"/>
+                                                                <xsd:enumeration value="Telefon"/>
+                                                                <xsd:enumeration value="Tablet"/>
+                                                                <xsd:enumeration value="Inne"/>
+                                                            </xsd:restriction>
+                                                        </xsd:simpleType>
+                                                    </xsd:element>
+                                                    <xsd:choice>
+                                                        <xsd:element name="Opis" type="xsd:string"/>
+                                                        <xsd:element name="Usterka" type="xsd:string"/>
+                                                    </xsd:choice>
+                                                </xsd:sequence>
+                                                <xsd:attribute name="rodzaj">
+                                                    <xsd:simpleType>
+                                                        <xsd:restriction base="xsd:string">
+                                                            <xsd:enumeration value="PC"/>
+                                                            <xsd:enumeration value="Lap"/>
+                                                            <xsd:enumeration value="Tel"/>
+                                                            <xsd:enumeration value="Tab"/>
+                                                            <xsd:enumeration value="Inne"/>
+                                                        </xsd:restriction>
+                                                    </xsd:simpleType>
+                                                </xsd:attribute>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="Data_rozpoczecia" type="xsd:date"/>
+                                        <xsd:element name="Czynnosc" type="xsd:string" maxOccurs="unbounded"/>
+                                        <xsd:choice>
+                                            <xsd:sequence/>
+                                            <xsd:sequence>
+                                                <xsd:element name="Data_zakonczenia" type="xsd:date"/>
+                                                <xsd:element name="Zakonczone" fixed=""/>
+                                            </xsd:sequence>
+                                        </xsd:choice>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="ID">
+                                        <xsd:simpleType>
+                                            <xsd:restriction base="xsd:string">
+                                                <xsd:pattern value="N[0-9]+"/>
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="pracID" type="xsd:string"/>
+                                    <xsd:attribute name="klientID" type="xsd:string"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:unique name="pesel">
+            <xsd:selector xpath="Pracownicy/Pracownik/Osoba"/>
+            <xsd:field xpath="Pesel"/>
+        </xsd:unique>
+        <xsd:unique name="PnrTel">
+            <xsd:selector xpath="Pracownicy/Pracownik/Osoba"/>
+            <xsd:field xpath="Nr_telefonu"/>
+        </xsd:unique>
+        <xsd:unique name="KnrTel">
+            <xsd:selector xpath="Klienci/Klient/Osoba"/>
+            <xsd:field xpath="Nr_telefonu"/>
+        </xsd:unique>
+        <xsd:unique name="Pemail">
+            <xsd:selector xpath="Pracownicy/Pracownik/Osoba"/>
+            <xsd:field xpath="Adres_email"/>
+        </xsd:unique>
+        <xsd:unique name="Kemail">
+            <xsd:selector xpath="Klienci/Klient/Osoba"/>
+            <xsd:field xpath="Adres_email"/>
+        </xsd:unique>
+        <xsd:key name="pID">
+            <xsd:selector xpath="Pracownicy/Pracownik"/>
+            <xsd:field xpath="@ID"/>
+        </xsd:key>
+        <xsd:key name="kID">
+            <xsd:selector xpath="Klienci/Klient"/>
+            <xsd:field xpath="@ID"/>
+        </xsd:key>
+        <xsd:key name="nID">
+            <xsd:selector xpath="Naprawy/Naprawa"/>
+            <xsd:field xpath="@ID"/>
+        </xsd:key>
+        <xsd:keyref name="npID" refer="pID">
+            <xsd:selector xpath="Naprawy/Naprawa"/>
+            <xsd:field xpath="@pracID"/>
+        </xsd:keyref>
+        <xsd:keyref name="nkID" refer="kID">
+            <xsd:selector xpath="Naprawy/Naprawa"/>
+            <xsd:field xpath="@klientID"/>
+        </xsd:keyref>
+    </xsd:element>
+</xsd:schema>
