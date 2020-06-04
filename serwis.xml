@@ -42,7 +42,7 @@
                 <Adres_email>Dzwonek54@wp.pl</Adres_email>
             </Osoba>
             <Adres kraj="Polska">
-                <Miasto>Gdansk</Miasto>
+                <Miasto>Gdynia</Miasto>
                 <Ulica>Teczowa</Ulica>
                 <Nr_domu>13</Nr_domu>
                 <Nr_mieszkania>3</Nr_mieszkania>
@@ -100,7 +100,7 @@
                 <Adres_email>BartekKaroliński@gmail.com</Adres_email>
             </Osoba>
             <Adres kraj="Polska">
-                <Miasto>Gdynia</Miasto>
+                <Miasto>Gdansk</Miasto>
                 <Ulica>Labedzia</Ulica>
                 <Nr_domu>5</Nr_domu>
                 <Nr_mieszkania>8</Nr_mieszkania>
