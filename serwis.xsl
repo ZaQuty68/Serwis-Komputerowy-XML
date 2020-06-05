@@ -2,7 +2,7 @@
     <xsl:output indent="yes" encoding="UTF-8" method="html"/>
     <xsl:template match="/">
         <html>
-            <body>
+            <body style="background-color:powderblue;">
                 <table border="1" cellpadding="3" cellspacing="0" title="Pracownicy" style="margin-left: auto; margin-right: auto">
                     <caption><h1>Pracownicy:</h1></caption>
                     <tr style="background-color:Yellow"><th>Pracownik</th>
@@ -22,10 +22,23 @@
                 </table>
                 <p>
                     <h1 style="text-align: center;">Adresy:</h1>
-                    <ul>
-                        <xsl:apply-templates select="Serwis"/>
-                    </ul>
+                    <div>
+                        <ul style="display: table; margin: 0 auto;">
+                            <xsl:apply-templates select="Serwis"/>
+                        </ul>
+                    </div>
                 </p>
+                <table border="2" cellpadding="3" cellspacing="0" title="Naprawy" style="margin-left: auto; margin-right: auto; background-color: #AAA">
+                    <caption><h1>Naprawy:</h1></caption>
+                    <tr>
+                        <th>Rodzaj</th>
+                        <th>Opis/Usterka</th>
+                        <th>Data Rozpoczęcia</th>
+                        <th>Czynności</th>
+                        <th>Zakończenie</th>
+                    </tr>
+                    <xsl:apply-templates select="Serwis/Naprawy/Naprawa"/>
+                </table>
             </body>
         </html>
     </xsl:template>
@@ -40,7 +53,7 @@
                 </tr>
             </xsl:when>
             <xsl:otherwise>
-                <tr style="background-color:Aqua">
+                <tr style="background-color:#AAA">
                     <td><b><xsl:value-of select="Imie"/><xsl:text> </xsl:text> <xsl:value-of select="Nazwisko"/></b></td>
                     <td><xsl:value-of select="Pesel"/></td>
                     <td><xsl:value-of select="Nr_telefonu"/></td>
@@ -56,7 +69,7 @@
                     <td><span style="color:#FE38F5"><xsl:value-of select="Imie"/><xsl:text> </xsl:text><xsl:value-of select="Nazwisko"/></span></td>
                 </xsl:when>
                 <xsl:otherwise>
-                    <td><span style="color:blue"><xsl:value-of select="Imie"/><xsl:text> </xsl:text><xsl:value-of select="Nazwisko"/></span></td>
+                    <td><span style="color:Aqua"><xsl:value-of select="Imie"/><xsl:text> </xsl:text><xsl:value-of select="Nazwisko"/></span></td>
                 </xsl:otherwise>
             </xsl:choose>
             <td><xsl:value-of select="Nr_telefonu"/></td>
@@ -97,5 +110,23 @@
                 <xsl:value-of select="Adres/Nr_domu"/><xsl:text>/</xsl:text><xsl:value-of select="Adres/Nr_mieszkania"/>
                 <i><xsl:text> Klient </xsl:text><xsl:value-of select="Osoba/Imie"/><xsl:text> </xsl:text><xsl:value-of select="Osoba/Nazwisko"/></i></li>
         </xsl:for-each>
+    </xsl:template>
+    <xsl:template match="Naprawa">
+        <tr>
+            <td><xsl:value-of select="Sprzet/Rodzaj"/></td>
+            <td><xsl:value-of select="substring(Sprzet/Opis, 0, 20)"/><xsl:value-of select="substring(Sprzet/Usterka, 0, 20)"/></td>
+            <td><xsl:value-of select="Data_rozpoczecia"/></td>
+            <td><ol>
+                <xsl:for-each select="Czynnosc">
+                    <li><xsl:value-of select="self::node()"/></li>
+                </xsl:for-each>
+            </ol></td>
+            <xsl:if test="count(Zakonczone) = 0">
+                <td>Naprawa dalej trwa</td>
+            </xsl:if>
+            <xsl:if test="count(Zakonczone) > 0">
+                <td><xsl:value-of select="Data_zakonczenia"/></td>
+            </xsl:if>
+        </tr>
     </xsl:template>
 </xsl:stylesheet>
